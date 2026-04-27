@@ -93,4 +93,84 @@ This project builds a strong foundation for **Document Intelligence systems** an
 **Syeda Fatima Zahra**
 Quaid-i-Azam University, Islamabad
 
----
+
+## week 6 : Advanced OCR System using Image Preprocessing and CNN
+
+
+#  OBJECTIVES
+
+• Skewed aur tilted documents ko correct karna
+• Noisy images ko clean karna
+• Perspective distortion fix karna
+• Image quality improve karna for OCR
+• CNN model build karna from scratch
+• MNIST dataset par high accuracy achieve karna
+
+
+#  METHODOLOGY / WORKFLOW
+
+##  Step 1: Image Preprocessing
+
+Is phase mein hum ne image ko OCR-ready banaya:
+
+###  Perspective Correction
+
+Image ko straight kiya using transformation
+
+###  Deskewing
+
+Tilted image ko seedha kiya
+
+###  Morphological Operations
+
+• Erosion → noise remove
+• Dilation → gaps fill
+• Opening → small noise remove
+• Closing → holes fill
+
+##  Step 2: CNN Model Development
+
+###  Dataset
+
+MNIST (handwritten digits dataset)
+
+### Preprocessing
+
+• Reshape (28×28×1)
+• Normalize (0–1)
+• One-hot encoding
+
+###  Model Architecture
+
+• Conv2D layers (feature extraction)
+• MaxPooling (dimension reduce)
+• Dense layers (classification)
+• Dropout (overfitting control)
+
+
+##  Step 3: Training & Evaluation
+
+• Optimizer: Adam
+• Loss: Categorical Crossentropy
+• Epochs: 10
+• Batch size: 128
+
+
+
+#  RESULTS
+
+• Image preprocessing se OCR quality improve hui
+• CNN model ne handwritten digits accurately recognize kiye
+• High accuracy (~98%) achieved
+• Model robust hai real-world inputs ke liye
+
+
+#  KEY LEARNINGS
+
+• Image preprocessing OCR ke liye **bohat critical hai**
+• CNNs automatically features learn karte hain
+• Data normalization aur architecture design important hai
+• Real-world images perfect nahi hoti — preprocessing zaroori hai
+
+
+
