@@ -1,176 +1,103 @@
-# 📄 OCR Document Scanner (Tesseract + EasyOCR)
+## project 2 
 
-👩‍💻 **Author:** Syeda Fatima Zahra
-🎓 **Degree:** BS Electronics
-🏫 **University:** Quaid-i-Azam University, Islamabad
+## Project Overview: Intelligent Document Processing (IDP) System
 
----
 
-## 📌 Project Overview
+This project is an AI-powered **Intelligent Document Processing (IDP) System** developed using **Python, OCR, Machine Learning, and FastAPI**. The system automatically analyzes uploaded document images, identifies their type, and extracts important information such as dates and amounts.
 
-This project demonstrates **Optical Character Recognition (OCR)** using:
+### Main Goal
 
-* Tesseract OCR
-* EasyOCR
+The objective of the project was to automate document handling by:
 
-The system extracts text from receipt images and improves accuracy using **OpenCV preprocessing techniques**.
+* Reading scanned document images
+* Extracting text using OCR
+* Classifying documents into categories
+* Extracting useful information
+* Providing results through a REST API
 
----
 
-## 🚀 Features
 
-* 📷 Text extraction from images
-* 🔍 Tesseract OCR implementation
-* 🤖 EasyOCR implementation
-* 🧹 Image preprocessing (grayscale, blur, thresholding)
-* 📊 Comparison of OCR results before and after preprocessing
-* 🧾 Synthetic receipt generation (no dataset required)
+## Technologies Used
 
----
+* **Python**
+* **FastAPI** – REST API framework
+* **Tesseract OCR (pytesseract)** – Text extraction from images
+* **Scikit-learn** – Machine learning model training
+* **TF-IDF Vectorization** – Text feature extraction
+* **Logistic Regression** – Document classification
+* **Joblib** – Saving trained models
 
-## 🛠️ Technologies Used
 
-* Python
-* OpenCV
-* Tesseract OCR
-* EasyOCR
-* PIL (Python Imaging Library)
-* Matplotlib
 
----
+## Document Categories
 
-## 📂 Project Structure
+The system was trained to classify:
 
-```
-├── notebook.ipynb
-├── receipt.png
-├── README.md
-```
+1. **Invoices**
+2. **Receipts**
+3. **Contracts**
 
----
 
-## ▶️ How to Run (Kaggle)
 
-1. Open Kaggle Notebook
-2. Install EasyOCR:
+## Project Workflow
 
-   ```bash
-   !pip install easyocr
-   ```
-3. Run all cells step by step
-4. The system will:
+### 1. Data Collection
 
-   * Generate a sample receipt
-   * Extract text using OCR
-   * Improve accuracy using preprocessing
+Datasets were collected from Kaggle and organized into separate folders for each document category.
 
----
+### 2. OCR Text Extraction
 
-## 📈 Results
+Using Tesseract OCR, text was extracted from scanned images.
 
-* Successfully extracted text from generated receipt
-* Improved OCR accuracy after preprocessing
-* Compared Tesseract and EasyOCR outputs
+### 3. Feature Engineering
 
----
+TF-IDF Vectorizer converted extracted text into numerical features for machine learning.
 
-## 💡 Future Improvements
+### 4. Model Training
 
-* Add real dataset support
-* Extract structured fields (Date, Total, Items)
-* Build GUI for document scanning
+A Logistic Regression classifier was trained on **127 documents**.
 
----
+### 5. Model Saving
 
-## ⭐ Conclusion
+The trained files were saved as:
 
-This project builds a strong foundation for **Document Intelligence systems** and demonstrates practical OCR implementation without requiring external datasets.
+* `vectorizer.pkl`
+* `classifier.pkl`
 
----
+### 6. REST API Development
 
-## 📬 Contact
+A FastAPI application was created with:
 
-**Syeda Fatima Zahra**
-Quaid-i-Azam University, Islamabad
+* `GET /` → Health check endpoint
+* `POST /classify` → Upload and classify documents
 
+### 7. Information Extraction
 
-## week 6 : Advanced OCR System using Image Preprocessing and CNN
+Regex patterns were used to extract:
 
+* Dates
+* Currency amounts
+* Total values
 
-#  OBJECTIVES
 
-• Skewed aur tilted documents ko correct karna
-• Noisy images ko clean karna
-• Perspective distortion fix karna
-• Image quality improve karna for OCR
-• CNN model build karna from scratch
-• MNIST dataset par high accuracy achieve karna
+## Final Outcome
 
+The project successfully demonstrated how OCR and Machine Learning can automate document processing tasks. The deployed FastAPI service can be integrated into real-world systems for:
 
-#  METHODOLOGY / WORKFLOW
+* Automated bookkeeping
+* Receipt management
+* Invoice processing
+* Legal document organization
+* Enterprise document automation
 
-##  Step 1: Image Preprocessing
 
-Is phase mein hum ne image ko OCR-ready banaya:
 
-###  Perspective Correction
+## Conclusion
 
-Image ko straight kiya using transformation
+This IDP system provides a complete pipeline from document upload to intelligent classification and data extraction. It shows the practical use of AI and OCR in reducing manual paperwork and improving business automation.
 
-###  Deskewing
 
-Tilted image ko seedha kiya
 
-###  Morphological Operations
-
-• Erosion → noise remove
-• Dilation → gaps fill
-• Opening → small noise remove
-• Closing → holes fill
-
-##  Step 2: CNN Model Development
-
-###  Dataset
-
-MNIST (handwritten digits dataset)
-
-### Preprocessing
-
-• Reshape (28×28×1)
-• Normalize (0–1)
-• One-hot encoding
-
-###  Model Architecture
-
-• Conv2D layers (feature extraction)
-• MaxPooling (dimension reduce)
-• Dense layers (classification)
-• Dropout (overfitting control)
-
-
-##  Step 3: Training & Evaluation
-
-• Optimizer: Adam
-• Loss: Categorical Crossentropy
-• Epochs: 10
-• Batch size: 128
-
-
-
-#  RESULTS
-
-• Image preprocessing se OCR quality improve hui
-• CNN model ne handwritten digits accurately recognize kiye
-• High accuracy (~98%) achieved
-• Model robust hai real-world inputs ke liye
-
-
-#  KEY LEARNINGS
-
-• Image preprocessing OCR ke liye **bohat critical hai**
-• CNNs automatically features learn karte hain
-• Data normalization aur architecture design important hai
-• Real-world images perfect nahi hoti — preprocessing zaroori hai
 
 
 
